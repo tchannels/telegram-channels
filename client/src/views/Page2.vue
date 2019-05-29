@@ -1,11 +1,11 @@
 <template>
-   <div>
+   <section>
       {{text}}
-   </div>
+   </section>
 </template>
 
 <script lang="ts">
-   import {Component, Prop, Vue} from 'vue-property-decorator';
+   import {Component, Vue} from 'vue-property-decorator';
 
    @Component
    export default class Page2 extends Vue {
@@ -13,6 +13,9 @@
    }
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+   section {
+      background-color: white;
+      padding: 12px;
+   }
 </style>
