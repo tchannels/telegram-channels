@@ -1,15 +1,14 @@
 <template>
    <section>
-      Content {{text}}
+      {{text}}
    </section>
 </template>
 
 <script lang="ts">
-   import {Component, Vue} from 'vue-property-decorator';
+   import {Vue} from 'vue-property-decorator';
 
-   @Component
-   export default class Page1 extends Vue {
-      public text: string = 'from 1-st page';
+   export default class Bots extends Vue {
+      public text: string = 'Another text';
    }
 </script>
 

@@ -11,21 +11,33 @@
                :key="`headerLink_${i}`">{{link.title}}</router-link>
          </div>
          <div class="header-search">
-            <input type="text" placeholder="Search…" class="header-searchInput" />
+            <input type="text"
+                   placeholder="Search…"
+                   class="header-searchInput"
+                   v-on:input="search()"
+                   v-model="searchValue"
+            />
          </div>
       </div>
    </header>
 </template>
 
 <script lang="ts">
-   import { Component, Vue } from 'vue-property-decorator';
+   import {Component, Vue} from 'vue-property-decorator';
+   import {Mutation,} from 'vuex-class';
 
    @Component
    export default class HeaderMenu extends Vue {
+      @Mutation('setSearch') public setSearch: any;
+      public searchValue: string = '';
       public links: Array<{ url: string, title: string }> = [
-         { url: '/page1', title: 'Channels' },
-         { url: '/page2', title: 'Bots' },
+         { url: '/channels', title: 'Channels' },
+         { url: '/bots', title: 'Bots' },
       ];
+
+      public search() {
+         this.setSearch(this.searchValue);
+      }
    }
 </script>
 
