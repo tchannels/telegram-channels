@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-const Page1 = () => import('./views/Page1.vue');
-const Page2 = () => import('./views/Page2.vue');
+
+const Channels = () => import('./views/Channels.vue');
+const Bots = () => import('./views/Bots.vue');
 Vue.use(VueRouter);
 
-
 const routes = [
-   { path: '/', component: Page1 },
-   { path: '/page1', component: Page1 },
-   { path: '/page2', component: Page2 },
+   { path: '/', component: Channels },
+   { path: '/channels', component: Channels },
+   { path: '/bots', component: Bots },
 ];
 
 export default new VueRouter({

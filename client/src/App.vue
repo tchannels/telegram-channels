@@ -36,7 +36,6 @@
    }
    .content {
       margin: 12px 0;
-      /*background-color: #fff;*/
       width: 1280px;
    }
 </style>
