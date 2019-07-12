@@ -2,7 +2,7 @@ import urllib.request
 import threading
 import time
 
-from ChannelsHTMLParser import ChannelsHTMLParser
+from .ChannelsHTMLParser import ChannelsHTMLParser
 
 class ChannelsScraper:
     """

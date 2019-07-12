@@ -1,11 +1,18 @@
 import json
+import logging
+from scrapy.crawler import CrawlerProcess
 
-from ChannelsScraper import ChannelsScraper            
+from utils.MrSpider import Spider
 
 if __name__ == "__main__":
-    scraper = ChannelsScraper()
-    scraper.wait()
-    with open('channels.json', 'w') as outfile:
-        json.dump(scraper.channel_names, outfile)
-    # For now we just write channel names to file
-    # TODO: get channel info by name
+    logger = logging.getLogger('channels_crawler')
+    logger.setLevel(logging.DEBUG)
+    file_handler = logging.FileHandler('crawler.log')
+    stream_handler = logging.StreamHandler()
+    logger.addHandler(file_handler)
+    logger.addHandler(stream_handler)
+
+    logger.debug('Script initialized')
+    process = CrawlerProcess()
+    process.crawl(Spider)
+    process.start()
